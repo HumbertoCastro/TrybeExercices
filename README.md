@@ -1,1 +1,3 @@
---bloco 2-- git,githube e internet
+DIRETORIO PRINCIPAL PARA EXIBIÇAO DE EXERCICIOS REALIZADOS DURANTE A FORMÇAO NA TRYBE
+Feito por Humberto de Castro Barboza.
+dedebarbos@hotmail.com
