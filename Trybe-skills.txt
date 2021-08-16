@@ -1,0 +1,4 @@
+o que eu vou aprender na trybe : 
+-unix
+-bash
+-git
