@@ -1,4 +1,0 @@
-Iremos aprender-
--unix
--bash
--git
