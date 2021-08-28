@@ -27,8 +27,33 @@ function CreateDias(){
     }
     dia.addEventListener("mouseover",mouseover);
     dia.addEventListener("mouseleave",mouseleave);
+    dia.addEventListener("click", putcolor);
     lista.appendChild(dia);
   }
+}
+function putcolor(element){
+  let origin = element.target;
+  console.log(origin);
+  if(document.querySelector(".my-tasks div").className == "task select"){
+    if(element.target.style.backgroundColor !== document.querySelector(".my-tasks div").style.backgroundColor){   
+      origin.style.backgroundColor = document.querySelector(".task").style.backgroundColor;  
+    }else{
+      element.target.style.backgroundColor = "#eee";      
+    }
+  }
+}
+function addButaoCompromisso(){
+  document.querySelector("#btn-add").addEventListener("click",addtasks);
+}
+addButaoCompromisso();
+function addtasks(){
+  let x = document.getElementById("task-input").value;
+  console.log(x);
+  let compromissos = document.createElement("div");
+  let texto = document.createElement("h1");
+  texto.innerText = x;
+  compromissos.appendChild(texto);
+  document.querySelector("body").appendChild(compromissos);
 }
 function AdicionarFeriados(){
   let butao = document.querySelector("#btn-holiday");
@@ -48,14 +73,39 @@ function Changesextaname(){
     lista[i].innerText = "SEXTOU";
   }
 }
+function tarefa(frase){
+  let fraseparaadicionar = document.createElement("span");
+  fraseparaadicionar.innerText = frase;
+  document.querySelector(".my-tasks").appendChild(fraseparaadicionar);
+}
+
+function taskColor(cor){
+  let color = document.createElement("div");
+  color.className = "task";
+  color.style.backgroundColor = cor;
+  color.addEventListener("click",taskselect);
+  document.querySelector(".my-tasks").appendChild(color);
+}
+
+function taskselect(){
+  if(document.querySelector(".my-tasks div").className == "task"){
+    document.querySelector(".my-tasks div").className = "task select";
+  }else{
+    document.querySelector(".my-tasks div").className = "task";
+  }  
+}
+
+tarefa("dsda");
+taskColor("red");
+
+
 
 function mouseover(origem){
-  origem.target.style.fontsize = "1100px";
-  origem.target.style.backgroundColor = "red";
+  origem.target.style.fontsize = "50px";
+  origem.target.style.fontSize = "40px";
 }
 function mouseleave(origem){
-  origem.target.style.fontSize = "large";
-  origem.target.style.backgroundColor = "white";
+  origem.target.style.fontSize = "20px";
 }
 adicionarsexta();
 
@@ -81,5 +131,4 @@ holidays("Feriados");
 CreateDias();
 createDaysOfTheWeek();
 AdicionarFeriados();
-document.getElementById("days").sty;[]
 // Escreva seu código abaixo.
